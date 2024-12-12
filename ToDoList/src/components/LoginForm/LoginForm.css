@@ -1,0 +1,23 @@
+.container{
+    width: 300px;
+    margin-inline: auto;
+    margin-top: 50px;
+}
+
+.container button{
+    margin-top: 20px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.inpContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    row-gap: 14px;
+}
+
+.inpContainer input{
+    padding: 10px;
+    border-radius: 20px;
+}

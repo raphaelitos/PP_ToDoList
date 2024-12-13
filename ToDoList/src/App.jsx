@@ -1,12 +1,12 @@
 import Header from './components/Header/Header'
 import LoginForm from './components/LoginForm/LoginForm'
+import Tarefa from './components/Tarefa/Tarefa'
 
 function App() {
 
   return (
     <>
-      <Header/>
-      <LoginForm/>
+      <Tarefa/>
     </>
   )
 }

@@ -1,53 +1,49 @@
 .container {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    width: 750px;
-    border-radius: 10px;
-    background-color: orange;
     display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-}
-
-.texto {
-    flex: 1; /* Ocupa o espaço disponível para o texto */
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
 .texto h3 {
-    color: black;
     margin: 0;
+    font-size: 18px;
     cursor: pointer;
 }
 
-.texto input {
-    font-family: Arial, Helvetica, sans-serif;
+.texto .riscado {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.container input {
     font-size: 16px;
-    width: 90%;
     border: none;
-    background-color: orange;
-    color: black;
+    background-color: orangered;
+    color: white;
+    text-align: center;
     border-radius: 5px;
     padding: 5px;
     outline: none;
 }
 
 .botoes {
-    display: flex; 
-    align-items: center;
+    display: flex;
     gap: 10px;
 }
 
-.botoes button {
-    background-color: transparent;
+button {
+    background: none;
     border: none;
     cursor: pointer;
 }
 
-.botoes button img {
-    width: 30px;
-    height: 30px;
-}
-
-.riscado {
-    text-decoration: line-through; /* Adiciona o traço no meio do texto */
+button img {
+    width: 20px;
+    height: 20px;
 }

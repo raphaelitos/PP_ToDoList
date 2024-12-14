@@ -1,11 +1,11 @@
-/*import React, { useState } from 'react';
-import './Tarefa.css';
+import React, { useState } from 'react';
 import closeIcon from './img/close.svg';
 import checkIcon from './img/check.svg';
+import './Tarefa.css';
 
-function Tarefa() {
-    const [titulo, setTitulo] = useState('Tarefa');
+function Tarefa({ tarefa, onApagar, onAlternarConcluida }) {
     const [editando, setEditando] = useState(false);
+    const [titulo, setTitulo] = useState(tarefa.titulo);
 
     function iniciarEdicao() {
         setEditando(true);
@@ -14,10 +14,6 @@ function Tarefa() {
     function finalizarEdicao(evento) {
         setTitulo(evento.target.value);
         setEditando(false);
-    }
-
-    function alterarTitulo(evento) {
-        setTitulo(evento.target.value);
     }
 
     return (
@@ -27,82 +23,25 @@ function Tarefa() {
                     <input
                         type="text"
                         value={titulo}
-                        onChange={alterarTitulo}
+                        onChange={(e) => setTitulo(e.target.value)}
                         onBlur={finalizarEdicao}
                         autoFocus
                     />
                 ) : (
-                    <h3 onClick={iniciarEdicao}>{titulo}</h3>
-                )}
-            </div>
-            <div className="botoes">
-                <button className="check_button">
-                    <img src={checkIcon}/>
-                </button>
-                <button className="del_button">
-                    <img src={closeIcon}/>
-                </button>
-            </div>
-        </div>
-    );
-}
-
-export default Tarefa;*/
-
-import React, { useState } from 'react';
-import './Tarefa.css';
-import closeIcon from './img/close.svg';
-import checkIcon from './img/check.svg';
-
-function Tarefa() {
-    const [titulo, setTitulo] = useState('Tarefa');
-    const [editando, setEditando] = useState(false);
-    const [concluida, setConcluida] = useState(false);
-
-    function iniciarEdicao() {
-        setEditando(true);
-    }
-
-    function finalizarEdicao(evento) {
-        setTitulo(evento.target.value);
-        setEditando(false);
-    }
-
-    function alterarTitulo(evento) {
-        setTitulo(evento.target.value);
-    }
-
-    function alternarConcluida() {
-        setConcluida(!concluida); // Alterna entre riscado e normal
-    }
-
-    return (
-        //Divisao entre texto e botoes para melhor formatacao
-        <div className="container">
-            <div className="texto"> 
-                {editando ? (
-                    <input
-                        type="text"
-                        value={titulo}
-                        onChange={alterarTitulo}
-                        onBlur={finalizarEdicao}
-                        autoFocus
-                    />
-                ) : (
-                    <h3 
-                        onClick={iniciarEdicao} 
-                        className={concluida ? 'riscado' : ''}
+                    <h3
+                        onClick={iniciarEdicao}
+                        className={tarefa.concluida ? 'riscado' : ''}
                     >
                         {titulo}
                     </h3>
                 )}
             </div>
             <div className="botoes">
-                <button className="del_button">
-                    <img src={closeIcon} />
+                <button className="del_button" onClick={onApagar}>
+                    <img src={closeIcon} alt="Excluir" />
                 </button>
-                <button className="check_button" onClick={alternarConcluida}>
-                    <img src={checkIcon} />
+                <button className="check_button" onClick={onAlternarConcluida}>
+                    <img src={checkIcon} alt="Concluir" />
                 </button>
             </div>
         </div>
@@ -110,3 +49,4 @@ function Tarefa() {
 }
 
 export default Tarefa;
+    

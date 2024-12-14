@@ -1,14 +1,12 @@
-import Header from './components/Header/Header'
-import LoginForm from './components/LoginForm/LoginForm'
-import Tarefa from './components/Tarefa/Tarefa'
+import React from 'react';
+import Home from './components/Home/Home';
 
 function App() {
-
-  return (
-    <>
-      <Tarefa/>
-    </>
-  )
+    return (
+        <div className="App">
+            <Home />
+        </div>
+    );
 }
 
-export default App
+export default App;

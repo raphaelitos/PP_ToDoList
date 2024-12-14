@@ -1,26 +1,53 @@
-.container{
+.container {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 5%;
+    padding: 10px;
     width: 750px;
-    height: 25px;
     border-radius: 10px;
-    background-color: black;
+    background-color: orange;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
 }
 
-.container h3{
-    color: white;   
-    text-align: center;
+.texto {
+    flex: 1; /* Ocupa o espaço disponível para o texto */
 }
 
-.container input {
+.texto h3 {
+    color: black;
+    margin: 0;
+    cursor: pointer;
+}
+
+.texto input {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    width: 60%;
+    width: 90%;
     border: none;
-    background-color: orangered;
-    color: white;
-    text-align: center;
+    background-color: orange;
+    color: black;
     border-radius: 5px;
     padding: 5px;
     outline: none;
+}
+
+.botoes {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+}
+
+.botoes button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.botoes button img {
+    width: 30px;
+    height: 30px;
+}
+
+.riscado {
+    text-decoration: line-through; /* Adiciona o traço no meio do texto */
 }

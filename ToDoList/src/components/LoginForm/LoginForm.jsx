@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./LoginForm.css"
 
-function LoginForm(){
+function LoginForm(testInput){
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     
@@ -12,33 +12,9 @@ function LoginForm(){
         setPass(event.target.value)
     }
 
-    function isEmailValid(email) {
-        // Regex para validar o formato do email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    function isPasswordStrong(password) {
-        // Regex para validar a força da senha
-        const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
-        return passwordRegex.test(password);
-    }
-
-    function isInpValid() {
-        if (!isEmailValid(email)) {
-            console.log("E-mail inválido.");
-            return false;
-        }
-        if (!isPasswordStrong(pass)) {
-            console.log("Senha fraca. Certifique-se de que a senha tenha pelo menos 6 caracteres, incluindo uma letra, um número e um símbolo.");
-            return false;
-        }
-        return true;
-    }
-
     function onSubmitHandler(event){
         event.preventDefault()
-        if(isInpValid()){
+        if(testInput(email, pass)){
             console.log("Email: ", email)
             console.log("Senha: ", pass)
         }
@@ -51,11 +27,11 @@ function LoginForm(){
         <form className="container" onSubmit={onSubmitHandler}>
             <div className="inpContainer">
                 <label htmlFor="email">Email</label>
-                <input type="text" id="email" placeholder="Email" onChange={onEmailChangeHandler}/>
+                <input type="text" id="email" placeholder="Seu email" onChange={onEmailChangeHandler}/>
             </div>
             <div className="inpContainer">
                 <label htmlFor="password">Senha</label>
-                <input type="password" id="password" placeholder="Senha" onChange={onPassChangeHandler}/>
+                <input type="password" id="password" placeholder="Sua senha" onChange={onPassChangeHandler}/>
             </div>
             <button type="submit">Login</button>
         </form>

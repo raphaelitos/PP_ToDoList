@@ -1,0 +1,28 @@
+/* Estilização geral do corpo para centralizar a página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fundo escuro para contraste */
+    color: #fff; /* Cor branca padrão */
+}
+
+/* Contêiner principal do cadastro */
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Centraliza verticalmente */
+    row-gap: 5px; /* Espaçamento entre o título e o formulário */
+}
+
+/* Título principal do cadastro */
+.cadastro-container h1 {
+    font-size: 2rem; /* Tamanho do título */
+    color: #ff6600; /* Laranja para destaque */
+    margin-bottom: 5px;
+    text-align: center;
+    text-transform: uppercase; /* Texto em caixa alta */
+    letter-spacing: 1.5px; /* Espaçamento entre letras */
+    font-weight: bold;
+}

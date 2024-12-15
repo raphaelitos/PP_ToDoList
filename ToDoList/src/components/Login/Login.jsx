@@ -1,8 +1,7 @@
-import { useState } from "react";
-import "./Cadastro.css";
-import LoginForm from "../LoginForm/LoginForm";
+import "./Login.css"
+import LoginForm from "../LoginForm/LoginForm"
 
-function Cadastro() {
+function Login(){
     const [errorMessage, setErrorMessage] = useState("");
 
     function isEmailValid(email) {
@@ -32,7 +31,7 @@ function Cadastro() {
         return true;
     }
 
-    function onSubmitHandlerCadastro(email, senha){
+    function onSubmitHandlerLogin(email, senha){
         if(isInpValid(email, senha)){
             console.log("Email: ", email)
             console.log("Senha: ", senha)
@@ -41,14 +40,14 @@ function Cadastro() {
             console.log('Campos inválidos.')
         }
     }
-
+    
     return (
-        <div className="cadastro-container">
-            <h1>Cadastre-se</h1>
+        <div className="login-container">
+            <h1>Entre na Conta</h1>
             {errorMessage && <div className="error-message">{errorMessage}</div>}
-            <LoginForm onSubmitHandler={onSubmitHandlerCadastro} />
+            <LoginForm onSubmitHandler={onSubmitHandlerLogin} />
         </div>
     );
 }
 
-export default Cadastro;
+export default Login

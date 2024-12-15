@@ -6,8 +6,8 @@ body {
     color: #fff; /* Cor branca padrão */
 }
 
-/* Contêiner principal do cadastro */
-.cadastro-container {
+/* Contêiner principal do login */
+.login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,8 +16,8 @@ body {
     row-gap: 5px; /* Espaçamento entre o título e o formulário */
 }
 
-/* Título principal do cadastro */
-.cadastro-container h1 {
+/* Título principal do login */
+.login-container h1 {
     font-size: 2rem; /* Tamanho do título */
     color: #ff6600; /* Laranja para destaque */
     margin-bottom: 5px;
@@ -27,6 +27,7 @@ body {
     font-weight: bold;
 }
 
+/* Estilo da mensagem de erro */
 .error-message {
     color: #ff0000; /* Cor vermelha para mensagens de erro */
     background-color: #ffecec; /* Fundo sutilmente avermelhado */

@@ -1,53 +1,48 @@
-import "./Login.css"
-import LoginForm from "../LoginForm/LoginForm"
+import { useState } from "react";
+import "./Login.css";
+import LoginForm from "../LoginForm/LoginForm";
 
-function Login(){
+function Login() {
     const [errorMessage, setErrorMessage] = useState("");
+    const [users, setUsers] = useState([
+        { email: "user@gmail.com", senha: "k@mi123" },
+    ]);
 
-    function isEmailValid(email) {
-        // Regex para validar o formato do email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+    // Função para verificar se o email e a senha existem na lista de usuários
+    function areCredentialsValid(email, senha) {
+        const user = users.find(function(u) {
+            return u.email === email && u.senha === senha;
+        });
+        return user !== undefined;
     }
 
-    function isPasswordStrong(password) {
-        // Regex para validar a força da senha
-        const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
-        return passwordRegex.test(password);
+    function addUser(email, senha) {
+        const novoUser = {
+            email: email,
+            senha: senha
+        };
+        setUsers([...users, novoUser]); // Adiciona nova tarefa ao estado
     }
 
-    function isInpValid(email, senha) {
-        if (!isEmailValid(email)) {
-            setErrorMessage("E-mail inválido.");
-            return false;
+    function onSubmitHandlerLogin(email, senha) {
+        if (areCredentialsValid(email, senha)) {
+            setErrorMessage(""); // Limpa qualquer mensagem de erro
+            console.log("Login bem-sucedido!");
+        } else {
+            setErrorMessage("Usuário ou senha inválidos."); 
         }
-        if (!isPasswordStrong(senha)) {
-            setErrorMessage(
-                "Senha fraca. A senha deve ter pelo menos 6 caracteres, incluindo uma letra, um número e um símbolo."
-            );
-            return false;
-        }
-        setErrorMessage(""); // Limpa mensagem caso os inputs estejam válidos
-        return true;
     }
 
-    function onSubmitHandlerLogin(email, senha){
-        if(isInpValid(email, senha)){
-            console.log("Email: ", email)
-            console.log("Senha: ", senha)
-        }
-        else{
-            console.log('Campos inválidos.')
-        }
-    }
-    
     return (
         <div className="login-container">
             <h1>Entre na Conta</h1>
             {errorMessage && <div className="error-message">{errorMessage}</div>}
             <LoginForm onSubmitHandler={onSubmitHandlerLogin} />
+            <button className="cadastrar">
+                Criar Conta
+            </button>
         </div>
     );
 }
 
-export default Login
+export default Login;

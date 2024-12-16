@@ -49,4 +49,3 @@ function Tarefa({ tarefa, onApagar, onAlternarConcluida }) {
 }
 
 export default Tarefa;
-    

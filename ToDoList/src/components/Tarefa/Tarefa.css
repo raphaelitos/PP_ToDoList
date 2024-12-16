@@ -1,49 +1,54 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 750px;
+    border-radius: 10px;
     background-color: black;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    color: white;
+    display: flex;
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: space-between; /* Deixa o texto e os botões nas extremidades */
+}
+
+.texto {
+    flex: 1; /* Ocupa o espaço disponível para o texto */
 }
 
 .texto h3 {
+    color: white;
     margin: 0;
-    font-size: 18px;
     cursor: pointer;
 }
 
-.texto .riscado {
-    text-decoration: line-through;
-    color: grey;
-}
-
-.container input {
+.texto input {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    width: 100%;
     border: none;
     background-color: orangered;
     color: white;
-    text-align: center;
     border-radius: 5px;
     padding: 5px;
     outline: none;
 }
 
 .botoes {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Garante que os botões fiquem lado a lado */
+    align-items: center; /* Centraliza os botões verticalmente */
+    gap: 10px; /* Espaçamento entre os botões */
 }
 
-button {
-    background: none;
+.botoes button {
+    background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-button img {
+.botoes button img {
     width: 20px;
     height: 20px;
+}
+
+.texto .riscado {
+    text-decoration: line-through;
+    color: grey;
 }

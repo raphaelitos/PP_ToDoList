@@ -7,7 +7,7 @@ function App() {
     document.title = 'To-Do List';
     return (
         <div className="App">
-            <Login />
+            <Home />
         </div>
     );
 }

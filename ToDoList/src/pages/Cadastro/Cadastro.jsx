@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Cadastro.css";
-import LoginForm from "../LoginForm/LoginForm";
+import LoginForm from "../../components/LoginForm/LoginForm" 
 
 function Cadastro() {
     const [errorMessage, setErrorMessage] = useState("");

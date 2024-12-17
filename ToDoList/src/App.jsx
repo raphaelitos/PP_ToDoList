@@ -1,14 +1,14 @@
 import React from 'react';
-import Home from './components/Home/Home';
-import Cadastro from './components/Cadastro/Cadastro';
-import Login from './components/Login/Login';
+import Home from './pages/Home/Home';
+import Cadastro from './pages/Cadastro/Cadastro';
+import Login from './pages/Login/Login';
 
 
 function App() {
     document.title = 'To-Do List';
     return (
         <div className="App">
-            <Cadastro/>
+            <Home/>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./Home.css"
-import Tarefa from '../Tarefa/Tarefa';
+import Tarefa from '../../components/Tarefa/Tarefa';
 import addIcon from './img/add.svg';
 
 function Home() {

@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+
 import "./Cadastro.css";
+
 import LoginForm from "../../components/LoginForm/LoginForm" 
 
 function Cadastro() {
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
     function isEmailValid(email) {
         // Regex para validar o formato do email
@@ -29,6 +33,7 @@ function Cadastro() {
             return false;
         }
         setErrorMessage(""); // Limpa mensagem caso os inputs estejam válidos
+        navigate("/home");
         return true;
     }
 

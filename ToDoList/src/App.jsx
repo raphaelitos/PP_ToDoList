@@ -10,8 +10,8 @@ import { createBrowserRouter, createRoutesFromElements,
         
 const browserRouter = createBrowserRouter(createRoutesFromElements(
     <Route path='/'>
-        <Route index element={<Home />} />
-        <Route path='login' element={<Login />} />
+        <Route index element={<Login />} />
+        <Route path='home' element={<Home />} />
         <Route path='cadastro' element={<Cadastro />} />
     </Route>
 ))

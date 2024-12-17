@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+
 import "./Login.css";
+
 import LoginForm from "../../components/LoginForm/LoginForm";
 
 function Login() {
@@ -7,6 +10,7 @@ function Login() {
     const [users, setUsers] = useState([
         { email: "user@gmail.com", senha: "k@mi123" },
     ]);
+    const navigate = useNavigate();
 
     // Função para verificar se o email e a senha existem na lista de usuários
     function areCredentialsValid(email, senha) {
@@ -21,13 +25,14 @@ function Login() {
             email: email,
             senha: senha
         };
-        setUsers([...users, novoUser]); // Adiciona nova tarefa ao estado
+        setUsers([...users, novoUser]); 
     }
 
     function onSubmitHandlerLogin(email, senha) {
         if (areCredentialsValid(email, senha)) {
             setErrorMessage(""); // Limpa qualquer mensagem de erro
             console.log("Login bem-sucedido!");
+            navigate("home");
         } else {
             setErrorMessage("Usuário ou senha inválidos."); 
         }
@@ -38,7 +43,10 @@ function Login() {
             <h1>Entre na Conta</h1>
             {errorMessage && <div className="error-message">{errorMessage}</div>}
             <LoginForm onSubmitHandler={onSubmitHandlerLogin} />
-            <button className="cadastrar">
+            <button 
+                className="cadastrar" 
+                onClick={() => navigate("/cadastro")}
+            >
                 Criar Conta
             </button>
         </div>

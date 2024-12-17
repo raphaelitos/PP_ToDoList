@@ -5,9 +5,7 @@ import addIcon from './img/add.svg';
 
 function Home() {
     const [tarefas, setTarefas] = useState([
-        { id: 1, titulo: 'Tarefa 1', concluida: false },
-        { id: 2, titulo: 'Tarefa 2', concluida: false },
-        { id: 3, titulo: 'Tarefa 3', concluida: false },
+        { id: 1, titulo: 'Tarefa 1', concluida: false }
     ]);
 
     // Remove tarefa pelo id
@@ -40,15 +38,15 @@ function Home() {
     }
 
     return (
-        <div className="home">
-            <header className='header'>
-                <h1>Suas Tarefas</h1>
+        <div className="home-container">
+            <header className='home-header'>
                 <p>Qtd.: {tarefas.length}</p>
+                <h1>Suas Tarefas</h1>
                 <button className="add_button" onClick={addTarefa}>
                     <img src={addIcon} alt="Nova tarefa" />
                 </button>
             </header>
-            <div className='tarefas'>
+            <div className='home-tarefas'>
                 {tarefas.map(function (tarefa) {
                     return (
                         <Tarefa

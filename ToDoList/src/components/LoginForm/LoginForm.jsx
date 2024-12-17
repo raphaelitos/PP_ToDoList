@@ -19,7 +19,7 @@ function LoginForm(props) {
     }
 
     return (
-        <form className="container" onSubmit={onFormSubmit}>
+        <form className="lgForm-container" onSubmit={onFormSubmit}>
             <div className="inpContainer">
                 <label htmlFor="email">Email</label>
                 <input

@@ -17,8 +17,8 @@ function Tarefa({ tarefa, onApagar, onAlternarConcluida }) {
     }
 
     return (
-        <div className="container">
-            <div className="texto">
+        <div className="tarefa-container">
+            <div className="tarefa-texto">
                 {editando ? (
                     <input
                         type="text"
@@ -36,7 +36,7 @@ function Tarefa({ tarefa, onApagar, onAlternarConcluida }) {
                     </h3>
                 )}
             </div>
-            <div className="botoes">
+            <div className="tarefa-botoes">
                 <button className="del_button" onClick={onApagar}>
                     <img src={closeIcon} alt="Excluir" />
                 </button>

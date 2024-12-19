@@ -25,6 +25,12 @@ Antes de começar, certifique-se de ter o [Node.js](https://nodejs.org/pt) insta
 
 Pronto! Agora você pode acessar o projeto no navegador pelo link exibido no terminal.
 
+## Usuário para teste
+
+Para fins de teste, há um usuário padrão configurado:
+- **Email:** user@gmail.com
+- **Senha:** k@mi123
+
 ---
 
 Espero que goste do resultado!
